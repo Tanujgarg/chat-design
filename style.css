@@ -1,0 +1,40 @@
+.chat {
+    padding-top: 20px;
+}
+
+.messages { 
+    color: white;
+    font-weight: 400
+}
+
+.sent-message {
+    min-width: 30px;
+    max-width: 150px;
+    min-height: 30px;
+    border-radius: 6px;
+    background: #113b45;
+    margin-left: auto;
+    margin-right: 0;
+    padding: 10px;
+    margin-top: 5px; 
+}
+
+.recieve-message {
+    margin-top: 5px; 
+    min-width: 30px;
+    max-width: 150px;
+    min-height: 30px;
+    border-radius: 6px;
+    background: #66a4ac;
+    align-content: left;
+    margin-left: 0;
+    margin-right: auto;
+    padding: 10px
+}
+
+.send-input {
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%
+}
