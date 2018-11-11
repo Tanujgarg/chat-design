@@ -2,98 +2,91 @@
 <html>
 
 <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>ChatApp -by Tanuj Garg</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet"
-          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-          crossorigin="anonymous">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-          rel="stylesheet"
-          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <script src="/socket.io/socket.io.js"></script>
 
 </head>
 
 <body>
-<nav class="navbar navbar-dark bg-info">
-    <div class="nav"></div>
-    <a class="navbar-brand" href="#"><strong>ChatApp</strong></a>
-    <div class="nav"></div>
-</nav>
-<div class="chat">
-    <div class="container">
-        <div class="messages">
-            <div class="logs">
-                <span class="badge badge-dark">
-                    Today
-                </span>
-            </div>
-            <div class="recieve-message ">
-                Hi
-            </div>
-            <div class="sent-message">
-                Hello
-            </div>
-            <div class="recieve-message">
-                How are you?
-            </div>
-            <div class="sent-message">
-                I'm fine.
-            </div>
-            <div class="sent-message">
-                What about you?
-            </div>
-            <div class="recieve-message">
-                I'm also fine dear.
-                What are doing?
-            </div>
-        </div>
-    </div>
-</div>
-<footer class="send-input">
-    <form>
-        <div class="input-group mb-3">
-            <input type="text" class="form-control"
-                   placeholder="Type your message here..."
-                   aria-label="Type your message here..."
-                   aria-describedby="basic-addon2">
-            <div class="input-group-append">
-                <button class="btn btn-info"
-                        type="submit">
-                    <i class="fa fa-send"></i>
-                </button>
-            </div>
-        </div>
-    </form>
-    <div class="copyright text-muted">
-        Design and develop by <strong>
-        <a href="https://www.linkedin.com/in/tanujgarg97/"
-           target="_blank">
-            Tanuj Garg <i class="fa fa-external-link"></i>
-        </a></strong>
-    </div>
-</footer>
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    <div id="navigation">
+        <nav class="navbar navbar-dark bg-info fixed-top">
+            <div class="nav"></div>
+            <a class="navbar-brand" href="#"><strong>ChatApp</strong></a>
+            <div class="nav"></div>
+        </nav>
+    </div>
+
+    <div id="chatArea">
+        <div class=messages>
+            <div class="container">
+                <div class="logs">
+                    <span class="badge badge-dark">
+                        Today
+                    </span>
+                </div>
+                <div class="recieve-message ">
+                    Hi
+                    <footer class="" style="font-size: 10px; text-align:right">
+                        Time Stamp
+                    </footer>
+                </div>                
+                <div class="sent-message">
+                    Hello
+                </div>
+                <div class="recieve-message">
+                    How are you?
+                </div>
+                <div class="sent-message">
+                    I'm fine.
+                </div>
+                <div class="sent-message">
+                    What about you?
+                </div>
+                <div class="recieve-message">
+                    I'm also fine dear.
+                    What are doing?
+                </div>
+                <div class="sent-message">
+                    Nothing much.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="inputArea">
+        <form>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Type your message here..." aria-label="Type your message here..."
+                    aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <button class="btn btn-info" type="submit">
+                        <i class="fa fa-send"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-<script>
-    $("form").on('submit', (e) => {
-        e.preventDefault();
-        $('input').val('')
-    })
-</script>
+    <script>
+        $("form").on('submit', (e) => {
+            e.preventDefault();
+            $('input').val('')
+        })
+    </script>
 
 </body>
 

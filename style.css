@@ -1,11 +1,10 @@
-.chat {
-    padding-top: 20px;
+#chatArea {
+    padding-top: 56px;
+    padding-bottom: 56px;
+    color: white;
+    height: 100%;
 }
 
-.messages {
-    color: white;
-    font-weight: 400
-}
 
 .sent-message {
     min-width: 30px;
@@ -31,19 +30,27 @@
     padding: 10px
 }
 
-.send-input {
-    padding: 10px;
-    position: absolute;
+#inputArea {
+    position: fixed;
     bottom: 0;
-    width: 100%
+    width: 100%;
+    background: white;
+    margin-bottom: -15px;
 }
 
 .logs {
-    margin-top: -14px;
     text-align: center;
 }
 
-.send-input input {
+#inputArea input {
     border: 2px solid #17a2b8;
     font-weight: 600;
 }
+
+#inputArea button {
+    width: 60px;
+}
+
+/* #inputArea form {
+    margin-right: 20px;
+} */
